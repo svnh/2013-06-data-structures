@@ -18,16 +18,16 @@ describe("queue", function() {
   it('should have "enqueue", "dequeue", and "size" methods', function() {
     expect(queue.enqueue).to.be.a('function');
     expect(queue.dequeue).to.be.a('function');
-    expect(queue.size).to.be.a('function');
+    expect(queue.returnsize).to.be.a('function');
   });
 
   it('if storage is empty then size should return 0', function() {
-      expect(queue.size()).to.equal(0);
+      expect(queue.returnsize()).to.equal(0);
     });
 
   it('if enqueue size will increase by 1', function() {
     queue.enqueue('bill');
-    expect(queue.size()).to.equal(1);
+    expect(queue.returnsize()).to.equal(1);
   });
 
   it('should add enqueued items to the end of the queue', function() {
@@ -39,7 +39,7 @@ describe("queue", function() {
     console.log(queue);
     console.log(queue.storage());
     storage=queue.storage();
-    expect(storage[queue.size()]).to.equal('good night');
+    expect(storage[queue.returnsize()]).to.equal('good night');
   });
 
 it('dequeue should return the first element in queue', function() {
@@ -51,7 +51,7 @@ it('dequeue should return the first element in queue', function() {
 
   it('should not error when dequeuing from an empty queue', function() {
     queue.dequeue();
-    expect(queue.size()).to.equal(0);
+    expect(queue.returnsize()).to.equal(0);
     // Fill out the body of the test here
   });
 
