@@ -36,10 +36,7 @@ describe("queue", function() {
     queue.enqueue('bye');
     queue.enqueue('good morning');
     queue.enqueue('good night');
-    console.log(queue);
-    console.log(queue.storage());
-    storage=queue.storage();
-    expect(storage[queue.returnsize()]).to.equal('good night');
+    expect(queue.storage[queue.returnsize()]).to.equal('good night');
   });
 
 it('dequeue should return the first element in queue', function() {

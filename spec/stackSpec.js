@@ -27,8 +27,7 @@ describe("stack", function() {
     stack.push('bye');
     stack.push('good morning');
     stack.push('good night');
-    storage=stack.storage();
-    expect(storage[stack.returnsize()]).to.equal('good night');
+    expect(stack.storage[stack.returnsize()]).to.equal('good night');
 
 
   });
